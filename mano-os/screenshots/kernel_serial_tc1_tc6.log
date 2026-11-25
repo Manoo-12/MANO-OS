@@ -1,0 +1,44 @@
+[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01HINFO : Framebuffer info: FrameBufferInfo { byte_len: 3145728, width: 1024, height: 768, pixel_format: Bgr, bytes_per_pixel: 4, stride: 1024 }
+INFO : UEFI bootloader started
+INFO : Using framebuffer at 0x80000000
+INFO : Reading configuration from disk was successful
+INFO : Trying to load ramdisk via Disk
+INFO : Ramdisk not found.
+TRACE: exiting boot services
+TRACE: switching to new level 4 table
+INFO : New page table at: PhysFrame[4KiB](0x101000)
+INFO : Elf file loaded at Pointer {
+    addr: 0x000000001d7a9000,
+    metadata: 184656,
+}
+INFO : virtual_address_offset: 0x8000000000
+INFO : Handling Segment: Ph64(ProgramHeader64 { type_: Ok(Load), flags: Flags(4), offset: 0, virtual_addr: 0, physical_addr: 0, file_size: 8ba4, mem_size: 8ba4, align: 1000 })
+INFO : Handling Segment: Ph64(ProgramHeader64 { type_: Ok(Load), flags: Flags(5), offset: 8bb0, virtual_addr: 9bb0, physical_addr: 9bb0, file_size: f15f, mem_size: f15f, align: 1000 })
+INFO : Handling Segment: Ph64(ProgramHeader64 { type_: Ok(Load), flags: Flags(6), offset: 17d10, virtual_addr: 19d10, physical_addr: 19d10, file_size: 1000, mem_size: 12f0, align: 1000 })
+INFO : Mapping bss section
+INFO : Handling Segment: Ph64(ProgramHeader64 { type_: Ok(Load), flags: Flags(6), offset: 18d10, virtual_addr: 1bd10, physical_addr: 1bd10, file_size: 14de, mem_size: 21500, align: 1000 })
+INFO : Mapping bss section
+INFO : Entry point at: 0x8000013910
+INFO : Creating GDT at PhysAddr(0x143000)
+INFO : Map framebuffer
+INFO : Map physical memory
+INFO : Allocate bootinfo
+INFO : Create Memory Map
+INFO : Create bootinfo
+INFO : Jumping to kernel entry point at VirtAddr(0x8000013910)
+
+=== MANO OS v1.0 (Obsidian Emerald) — Booting x86-64 Rust Microkernel ===
+Author: MANO M | Mode: Freestanding #![no_std] | Host Disk: Read-Only Protected
+[BOOT] GDT & TSS (IST0 Double-Fault Stack) loaded.
+[BOOT] 256-entry IDT, 8259 PIC (32..47), and 100 Hz PIT initialized.
+========================================================
+  MANO OS Bare-Metal Kernel Verification Suite (TC1-TC6)
+========================================================
+[TC1] Heap Arena Allocator (used=512 B): PASS
+[TC2] 2-Task RR Fairness (switches=5): PASS
+[TC3] 4-Task Circular Rotation (switches=7): PASS
+[TC4] Boundary Quantum=1 Preemption: PASS
+[TC5] 1,000-Cycle Spinlock & Scheduler Stress (switches=499): PASS
+[TC6] Host Zero-Write Guard & Deterministic Repeatability: PASS
+[GUI ] Rendered MANO OS Obsidian-Emerald GOP Dashboard.
+[READY] MANO OS Microkernel running with hardware interrupts enabled.

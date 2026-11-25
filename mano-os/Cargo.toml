@@ -1,0 +1,20 @@
+[package]
+name = "mano-os"
+version = "1.0.0"
+edition = "2024"
+authors = ["MANO M"]
+description = "MANO OS — Freestanding x86-64 Rust no_std Microkernel (Obsidian Emerald Edition)"
+
+[workspace]
+members = ["kernel"]
+resolver = "2"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+[build-dependencies]
+mano_kernel = { path = "kernel", artifact = "bin", target = "x86_64-unknown-none" }
+bootloader = "0.11"
